@@ -1,7 +1,7 @@
 float i;
 
 void setup(){
-  size(screenWidth,screenHeight,P3D);
+  fullScreen (P3D);
 }
 
 void draw()
