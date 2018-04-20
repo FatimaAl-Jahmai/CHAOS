@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script src="processing.js"></script>
 		<style>
 			html,body {
@@ -15,18 +16,17 @@
 		</style>
 	</head>
 	
-	<body>
-		<canvas id="sphere2" onclick="showInside()" data-processing-sources="sphere2.pde"></canvas>
-		<canvas id="sphere1" onclick="showOutside()" style="display: none;" data-processing-sources="sphere1.pde"></canvas>
+	<body onclick="change()">
+		<canvas id="sphere2" data-processing-sources="sphere2.pde"></canvas>
+		<canvas id="sphere1" style="display: none;" data-processing-sources="sphere1.pde"></canvas>
 		<script>
-			function showOutside() {
-				document.getElementById("sphere2").style.display = "block";
-				document.getElementById("sphere1").style.display = "none";
-			}
-			
-			function showInside() {
-				document.getElementById("sphere2").style.display = "none";
-				document.getElementById("sphere1").style.display = "block";
+			var current = 2;
+			function change() {
+				document.getElementById("sphere"+current).style.display = "none";
+				if(current == 2) {
+					current = 1;
+				} else { current = 2; }
+				document.getElementById("sphere"+current).style.display = "block";
 			}
 		</script>
 	</body>
