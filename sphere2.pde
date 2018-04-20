@@ -17,5 +17,5 @@ void draw()
 
   noFill();
 	stroke(255);
-	sphere(screenWidth/3);
+	sphere(500);
 }
